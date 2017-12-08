@@ -12,11 +12,15 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  queries.postProject(req.body).then(project => res.json(project))
+  queries.postProject(req.body).then(project => res.json(project[0]))
 })
 
 router.delete('/:id', (req, res) => {
-  queries.deleteProject(req.params.id).then(project => res.json(project))
+  queries.deleteProject(req.params.id).then(project => res.json({ deleted: project[0] }))
+})
+
+router.put('/:id', (req, res) => {
+  queries.editProject(req.params.id, req.body).then(project => res.json({ edited: project[0] }))
 })
 
 module.exports = router
