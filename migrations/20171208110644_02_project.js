@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
     table.increments()
     table.text('projectName').notNullable()
     table.text('projectUrl').notNullable()
-    table.text('projectGit').notNullable()
+    table.text('projectGit')
     table.integer('memberId').references('member.id').unsigned().onDelete('cascade')
   })
 }
