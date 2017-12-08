@@ -10,3 +10,7 @@ p {
   font-size: 1.5em;
   line-height: 1.5;
 }
+
+.brand-logo {
+  margin-left: 1em;
+}
