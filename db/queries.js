@@ -8,7 +8,12 @@ function getOneProject(id) {
   return knex('project').where('id', id).first()
 }
 
+function postProject(project) {
+  return knex('project').insert(project).returning('*')
+}
+
 module.exports = {
   getAllProjects,
-  getOneProject
+  getOneProject,
+  postProject
 }
