@@ -1,0 +1,14 @@
+<h1>Projects!</h1>
+
+<ul class="collection">
+  {{#each projects as |project|}}
+    <li class="collection-item avatar">
+      <img src="http://www.limestone.edu/sites/default/files/user.png" alt="" class="circle">
+      <span class="title">{{project.projectName}}</span>
+      <p>Project Description</p>
+      <a class="waves-effect waves-light btn">Deployed</a>
+      <a class="waves-effect waves-light btn">GitHub</a>
+      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+  {{/each}}
+</ul>
