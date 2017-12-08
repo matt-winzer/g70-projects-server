@@ -12,8 +12,13 @@ function postProject(project) {
   return knex('project').insert(project).returning('*')
 }
 
+function deleteProject(id) {
+  return knex('project').where('id', id).del()
+}
+
 module.exports = {
   getAllProjects,
   getOneProject,
-  postProject
+  postProject,
+  deleteProject
 }

@@ -15,4 +15,8 @@ router.post('/', (req, res) => {
   queries.postProject(req.body).then(project => res.json(project))
 })
 
+router.delete('/:id', (req, res) => {
+  queries.deleteProject(req.params.id).then(project => res.json(project))
+})
+
 module.exports = router
