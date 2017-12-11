@@ -7,10 +7,14 @@ a {
 }
 
 p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   line-height: 1.5;
 }
 
 .brand-logo {
   margin-left: 1em;
+}
+
+.title {
+  font-size: 1.5em !important;
 }

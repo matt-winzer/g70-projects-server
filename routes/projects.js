@@ -2,9 +2,10 @@ const express = require('express')
 const router = express.Router()
 const knex = require('../db/connection')
 const queries = require('../db/queries')
+let title = 'WAhtup!!'
 
 router.get('/', (req, res) => {
-  queries.getAllProjects().then(projects => res.render('projects', { projects }))
+  queries.getAllProjects().then(projects => res.render('projects', { title: title, projects: projects, data: { name: 'Matt', pets: ['Tiger', 'Jack']} }))
 })
 
 router.get('/:id', (req, res) => {
