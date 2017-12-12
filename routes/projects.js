@@ -7,6 +7,10 @@ router.get('/', (req, res) => {
   queries.getAllProjects().then(projects => res.render('projects', { title: 'gProjects', projects }))
 })
 
+router.get('/submit', (req, res) => {
+  queries.getAllStudents().then(students => res.render('submit', { students }))
+})
+
 router.get('/:id', (req, res) => {
   queries.getOneProject(req.params.id).then(project => res.json(project))
 })

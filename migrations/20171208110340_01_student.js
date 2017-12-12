@@ -1,5 +1,5 @@
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('member', (table) =>{
+  return knex.schema.createTable('student', (table) =>{
     table.increments()
     table.text('username').notNullable().unique()
     table.text('email').notNullable().unique()
@@ -11,5 +11,5 @@ exports.up = function(knex, Promise) {
 // express knex 4 lyfe
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTableIfExists('member')
+  return knex.schema.dropTableIfExists('student')
 }

@@ -20,6 +20,10 @@ function editProject(id, project) {
   return knex('project').where('id', id).update(project).returning('*')
 }
 
+function getAllStudents() {
+  return knex('student')
+}
+
 module.exports = {
   getAllProjects,
   getOneProject,
