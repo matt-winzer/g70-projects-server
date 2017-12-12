@@ -4,7 +4,7 @@ const knex = require('../db/connection')
 const queries = require('../db/queries')
 
 router.get('/', (req, res) => {
-  queries.getAllProjects().then(projects => res.render('projects', { projects }))
+  queries.getAllProjects().then(projects => res.render('projects', { title: 'gProjects', projects }))
 })
 
 router.get('/:id', (req, res) => {
