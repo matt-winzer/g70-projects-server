@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       var students = [{
         id: 1,
-        username: 'winzer',
+        name: 'Matt Winzer',
         email: process.env.SEEDEMAIL,
         password: bcrypt.hashSync(process.env.SEEDPW, 10)
       }]

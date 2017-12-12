@@ -1,5 +1,5 @@
 const submit = document.querySelector('#submit-project')
-const postUrl = '/sdfsd'
+const postUrl = '/projects'
 
 submit.addEventListener('click', submitProject)
 
@@ -19,17 +19,10 @@ function submitProject(e) {
     name,
     studentId
   }) : rejectPost()
-
-  console.log(studentId);
-  console.log(name);
-  console.log(description);
-  console.log(deployedUrl);
-  console.log(gitUrl);
-
 }
 
 function postProject(project, res) {
-  fetch('/projects', {
+  fetch(postUrl, {
     method: 'POST',
     headers: new Headers({ 'Content-Type': 'application/json' }),
     body: JSON.stringify(project)

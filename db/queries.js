@@ -2,6 +2,8 @@ const knex = require('./connection')
 
 function getAllProjects() {
   return knex('project')
+    .join('student', 'project.studentId', 'student.id')
+    .select('project.*', 'student.name as studentName')
 }
 
 function getOneProject(id) {

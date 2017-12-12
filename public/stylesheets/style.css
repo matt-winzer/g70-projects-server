@@ -27,3 +27,13 @@ span.title {
 .brand-logo {
   margin-left: 1em;
 }
+
+a.student-links {
+  margin-left: .5em !important;
+}
+
+div.student-links  {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
