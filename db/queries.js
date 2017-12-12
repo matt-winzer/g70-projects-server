@@ -29,5 +29,6 @@ module.exports = {
   getOneProject,
   postProject,
   deleteProject,
-  editProject
+  editProject,
+  getAllStudents
 }
