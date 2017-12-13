@@ -15,6 +15,10 @@ p {
   line-height: 1.5;
 }
 
+p.welcome-text {
+  font-size: 2em;
+}
+
 p.project-description {
   margin-top: 0 !important;
 }
