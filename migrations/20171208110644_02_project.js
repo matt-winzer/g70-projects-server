@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
     table.text('imageUrl')
     table.text('deployedUrl').notNullable()
     table.text('gitUrl')
-    table.integer('memberId').references('member.id').unsigned().onDelete('cascade')
+    table.integer('studentId').references('student.id').unsigned().onDelete('cascade')
   })
 }
 

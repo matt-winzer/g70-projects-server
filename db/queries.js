@@ -1,7 +1,7 @@
 const knex = require('./connection')
 
 function getAllProjects() {
-  return knex('project')
+  return knex('project').join('student', 'project.studentId', 'student.id')
 }
 
 function getOneProject(id) {
@@ -20,10 +20,20 @@ function editProject(id, project) {
   return knex('project').where('id', id).update(project).returning('*')
 }
 
+function getAllStudents() {
+  return knex('student')
+}
+
+function getStudentNames() {
+  return fetch('http://g70-gradebook-api.herokuapp.com/students')
+}
+
 module.exports = {
   getAllProjects,
   getOneProject,
   postProject,
   deleteProject,
-  editProject
+  editProject,
+  getAllStudents,
+  getStudentNames
 }

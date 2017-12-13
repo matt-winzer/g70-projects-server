@@ -1,13 +1,30 @@
 <h1>{{title}}</h1>
 
-<ul class="collection">
+<!-- <ul class="collection">
   {{#each projects}}
     <li class="collection-item avatar">
-      <img src="http://www.limestone.edu/sites/default/files/user.png" alt="" class="circle">
-      <span class="title">{{name}}</span>
+      <i class="material-icons circle green">insert_chart</i>
+      <span class="title">{{name}} - {{fullName}}</span>
       <p class="project-description">{{description}}</p>
-      <a href={{deployedUrl}} class="waves-effect waves-light btn orange darken-2" target="_blank">Deployed</a>
-      <a href={{gitUrl}} class="waves-effect waves-light btn orange darken-2" target="_blank">GitHub</a>
+      <div class="student-links">
+        <a href={{deployedUrl}} class="waves-effect waves-light btn orange darken-2 student-links" target="_blank">Deployed</a>
+        <a href={{gitUrl}} class="waves-effect waves-light btn orange darken-2 student-links" target="_blank">GitHub</a>
+      </div>
     </li>
   {{/each}}
-</ul>
+</ul> -->
+
+<ul class="collapsible" data-collapsible="accordion">
+  {{#each projects}}
+   <li>
+     <div class="collapsible-header"><i class="material-icons green-text">add_circle</i>{{fullName}} - {{name}}</div>
+     <div class="collapsible-body">
+       <p class="project-description">{{description}}</p>
+       <div class="student-links">
+         <a href={{deployedUrl}} class="waves-effect waves-light btn orange darken-2 student-links" target="_blank">Deployed</a>
+         <a href={{gitUrl}} class="waves-effect waves-light btn orange darken-2 student-links" target="_blank">GitHub</a>
+       </div>
+     </div>
+   </li>
+  {{/each}}
+ </ul>
