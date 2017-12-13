@@ -16,12 +16,11 @@ p {
 }
 
 p.project-description {
-  margin-top: .75em !important;
-  margin: .75em 0 !important;
+  margin-top: 0 !important;
 }
 
-span.title {
-  font-size: 1.5em !important;
+.collapsible-header {
+  font-size: 1.2em !important;
 }
 
 .brand-logo {
