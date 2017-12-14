@@ -5,11 +5,14 @@ submit.addEventListener('click', submitProject)
 
 function submitProject(e) {
   e.preventDefault()
-  const studentId = $('select.icons').val()
+  console.log('clicked');
+  const studentId = $('select.student-name').val()
   const name = document.querySelector('#project-name').value
   const description = document.querySelector('#project-description').value
   const deployedUrl = document.querySelector('#deployed-url').value
   const gitUrl = document.querySelector('#github-url').value
+
+  console.log(studentId);
 
   studentId && name && deployedUrl ? postProject({
     name,
@@ -22,6 +25,7 @@ function submitProject(e) {
 }
 
 function postProject(project, res) {
+  console.log('posting');
   fetch(postUrl, {
     method: 'POST',
     headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -34,5 +38,5 @@ function postProject(project, res) {
 }
 
 function rejectPost() {
-  console.error;
+  console.error('rejected')
 }
