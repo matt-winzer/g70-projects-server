@@ -9,6 +9,7 @@ const cors = require('cors')
 const index = require('./routes/index')
 const users = require('./routes/users')
 const projects = require('./routes/projects')
+const students = require('./routes/students')
 
 const app = express()
 
@@ -31,6 +32,7 @@ app.use(cors())
 app.use('/', index)
 app.use('/users', users)
 app.use('/projects', projects)
+app.use('/students', students)
 
 
 

@@ -3,12 +3,16 @@ const router = express.Router()
 const knex = require('../db/connection')
 const queries = require('../db/queries')
 
-router.get('/', (req, res) => {
-  queries.getAllStudents().then(students => {
-    const g70 = students.filter(student => student.cohort.toLowerCase() === 'g70')
-    const g75 = students.filter(student => student.cohort.toLowerCase() === 'g75')
-    res.render('submit', { cohorts: g70, g75} })
+router.get('/', async (req, res) => {
+  const students = await queries.getAllStudents()
+  const cohorts = await queries.getUniqueCohorts()
+  const data = cohorts.map(cohort => {
+    return {
+      cohort: cohort.cohort,
+      students: students.filter(student => student.cohort === cohort.cohort)
+    }
   })
+  res.render('students', { cohorts: data })
 })
 
 router.get('/:id', (req, res) => {

@@ -24,8 +24,13 @@ function getAllStudents() {
   return knex('student')
 }
 
-function getStudentNames() {
-  return fetch('http://g70-gradebook-api.herokuapp.com/students')
+function getUniqueCohorts() {
+  return knex('student')
+    .distinct('cohort')
+}
+
+function getStudentsByCohort(cohort) {
+  return knex('student').where('cohort', cohort)
 }
 
 module.exports = {
@@ -35,5 +40,6 @@ module.exports = {
   deleteProject,
   editProject,
   getAllStudents,
-  getStudentNames
+  getUniqueCohorts,
+  getStudentsByCohort
 }
