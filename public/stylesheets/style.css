@@ -40,3 +40,11 @@ div.student-links  {
   flex-direction: row;
   justify-content: flex-end;
 }
+
+li.collection-header {
+  background-color: #ff9800 !important;
+}
+
+div.student-info {
+  margin: 0 .8em;
+}

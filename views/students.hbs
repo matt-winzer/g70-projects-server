@@ -6,26 +6,7 @@
       <h4>{{cohort}}</h4>
     </li>
     {{#each students}}
-    <a href="/students/{{id}}" class="collection-item">{{fullName}}</a>
+    <a href="/students/{{id}}" class="collection-item black-text">{{fullName}}</a>
     {{/each}}
   </ul>
 {{/each}}
-
-{{!-- 
-<div class="row">
-  {{#each students}}
-  <div class="col s12 m6 l4">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">{{fullName}}</span>
-        <p>{{email}}</p>
-        <p>{{cohort}}</p>
-        <p></p>
-      </div>
-      <div class="card-action">
-        <a href="https://github.com/{{githubUsername}}" target="_blank">GitHub</a>
-      </div>
-    </div>
-  </div>
-  {{/each}}
-</div> --}}

@@ -20,26 +20,14 @@ function editProject(id, project) {
   return knex('project').where('id', id).update(project).returning('*')
 }
 
-function getAllStudents() {
-  return knex('student')
-}
-
-function getUniqueCohorts() {
-  return knex('student')
-    .distinct('cohort')
-}
-
-function getStudentsByCohort(cohort) {
-  return knex('student').where('cohort', cohort)
-}
-
 module.exports = {
   getAllProjects,
   getOneProject,
   postProject,
   deleteProject,
   editProject,
-  getAllStudents,
-  getUniqueCohorts,
-  getStudentsByCohort
+  // getAllStudents,
+  // getUniqueCohorts,
+  // getStudentsByCohort,
+  // getOneStudent
 }

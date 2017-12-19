@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const knex = require('../db/connection')
-const queries = require('../db/queries')
+const queries = require('../db/student.queries')
 
 router.get('/', async (req, res) => {
   const students = await queries.getAllStudents()
@@ -15,7 +15,9 @@ router.get('/', async (req, res) => {
   res.render('students', { cohorts: data })
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
+  const student = await queries.getOneStudent(req.params.id)
+  res.render('student', { student })
 })
 
 router.post('/', (req, res) => {
