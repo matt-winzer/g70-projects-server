@@ -2,13 +2,14 @@ const express = require('express')
 const router = express.Router()
 const knex = require('../db/connection')
 const queries = require('../db/queries')
+const studentQueries = require('../db/student.queries')
 
 router.get('/', (req, res) => {
-  queries.getAllProjects().then(projects => res.render('projects', { title: 'All Projects', projects }))
+  queries.getAllProjects().then(projects => res.render('projects', { projects }))
 })
 
 router.get('/submit', (req, res) => {
-  queries.getAllStudents().then(students => {
+  studentQueries.getAllStudents().then(students => {
     const g70 = students.filter(student => student.cohort.toLowerCase() === 'g70')
     const g75 = students.filter(student => student.cohort.toLowerCase() === 'g75')
     res.render('submit', { g70, g75 })

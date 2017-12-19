@@ -21,6 +21,7 @@ p.welcome-text {
 
 p.project-description {
   margin-top: 0 !important;
+  margin-bottom: 1em !important;
 }
 
 .collapsible-header {
@@ -39,4 +40,16 @@ div.student-links  {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+}
+
+li.collection-header {
+  background-color: #ff9800 !important;
+}
+
+a.collection-item {
+  font-size: 1.2em !important;
+}
+
+div.student-info {
+  margin: 0 .8em;
 }

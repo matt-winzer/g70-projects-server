@@ -1,0 +1,12 @@
+<h1>All Students</h1>
+
+{{#each cohorts}}
+  <ul class="collection with-header">
+    <li class="collection-header">
+      <h4>{{cohort}}</h4>
+    </li>
+    {{#each students}}
+    <a href="/students/{{id}}" class="collection-item black-text">{{fullName}}</a>
+    {{/each}}
+  </ul>
+{{/each}}

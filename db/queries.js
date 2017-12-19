@@ -20,20 +20,14 @@ function editProject(id, project) {
   return knex('project').where('id', id).update(project).returning('*')
 }
 
-function getAllStudents() {
-  return knex('student')
-}
-
-function getStudentNames() {
-  return fetch('http://g70-gradebook-api.herokuapp.com/students')
-}
-
 module.exports = {
   getAllProjects,
   getOneProject,
   postProject,
   deleteProject,
   editProject,
-  getAllStudents,
-  getStudentNames
+  // getAllStudents,
+  // getUniqueCohorts,
+  // getStudentsByCohort,
+  // getOneStudent
 }

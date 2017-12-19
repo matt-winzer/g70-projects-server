@@ -1,0 +1,58 @@
+<h1>Student</h1>
+
+<div class="row">
+  {{#each student}}
+    <div class="row">
+      <div class="col s12">
+        <div class="card orange student-info">
+          <div class="card-content">
+            <h4>{{student.fullName}}</h4>
+          </div>
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+              <li class="tab grey-text">
+                <a class="active" href="#projects">Projects</a>
+              </li>
+              <li class="tab">
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-content grey lighten-4">
+            <div id="projects">
+              {{#if projects}}
+              <ul class="collapsible" data-collapsible="accordion">
+                {{#each projects}}
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons green-text">add_circle</i>{{name}}
+                  </div>
+                  <div class="collapsible-body">
+                    <p class="project-description">{{description}}</p>
+                    <div class="student-links">
+                      <a href={{deployedUrl}} class="waves-effect waves-light btn orange darken-2 student-links" target="_blank">Deployed</a>
+                      <a href={{gitUrl}} class="waves-effect waves-light btn orange darken-2 student-links" target="_blank">GitHub</a>
+                    </div>
+                  </div>
+                </li>
+                {{/each}}
+              {{else}}
+                <p>No projects currently.</p>
+              {{/if}}
+              </ul>
+            </div>
+            <div id="contact">
+              <div class="row">
+                <div class="col s12">
+                  <div class="card-panel white">
+                    <p>{{student.email}}</p>
+                    <p>https://github.com/{{student.githubUsername}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
