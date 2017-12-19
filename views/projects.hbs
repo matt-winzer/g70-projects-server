@@ -1,16 +1,15 @@
-<h1>{{title}}</h1>
+<h1>All Projects</h1>
 
 <ul class="collapsible" data-collapsible="accordion">
   {{#each projects}}
-   <li>
-     <div class="collapsible-header"><i class="material-icons green-text">add_circle</i>{{fullName}} - {{name}}</div>
-     <div class="collapsible-body">
-       <p class="project-description">{{description}}</p>
-       <div class="student-links">
-         <a href={{deployedUrl}} class="waves-effect waves-light btn orange darken-2 student-links" target="_blank">Deployed</a>
-         <a href={{gitUrl}} class="waves-effect waves-light btn orange darken-2 student-links" target="_blank">GitHub</a>
-       </div>
-     </div>
-   </li>
+  <li>
+    <div class="collapsible-header"><i class="material-icons green-text">add_circle</i>{{fullName}} - {{name}}</div>
+    <div class="collapsible-body">
+      <p class="project-description">{{description}}</p>
+      <div class="student-links">
+        <a href={{deployedUrl}} class="waves-effect waves-light btn orange darken-2 student-links" target="_blank">Deployed</a>          <a href={{gitUrl}} class="waves-effect waves-light btn orange darken-2 student-links" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </li>
   {{/each}}
- </ul>
+</ul>
