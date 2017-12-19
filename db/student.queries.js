@@ -12,13 +12,18 @@ function getStudentsByCohort(cohort) {
   return knex('student').where('cohort', cohort)
 }
 
-function getOneStudent(id) {
+function getStudentById(id) {
   return knex('student').where('id', id)
+}
+
+function getProjectsByStudentId(id) {
+  return knex('project').where('studentId', id)
 }
 
 module.exports = {
   getAllStudents,
   getUniqueCohorts,
   getStudentsByCohort,
-  getOneStudent
+  getStudentById,
+  getProjectsByStudentId
 }

@@ -16,8 +16,10 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/:id', async (req, res) => {
-  const student = await queries.getOneStudent(req.params.id)
-  res.render('student', { student })
+  const student = await queries.getStudentById(req.params.id)
+  const projects = await queries.getProjectsByStudentId(req.params.id)
+  const studentWithProjects = student.map(student => ({ student, projects }))
+  res.render('student', { student: studentWithProjects })
 })
 
 router.post('/', (req, res) => {
