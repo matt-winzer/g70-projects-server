@@ -19,7 +19,6 @@ function submitProject(e) {
     description,
     deployedUrl,
     gitUrl,
-    name,
     studentId
   }) : rejectPost()
 }

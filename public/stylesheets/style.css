@@ -16,7 +16,7 @@ p {
 }
 
 p.welcome-text {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 p.project-description {
@@ -52,4 +52,12 @@ a.collection-item {
 
 div.student-info {
   margin: 0 .8em;
+}
+
+.dropdown-content li > span {
+  color: black !important;
+}
+
+.dropdown-content li.optgroup > span {
+  color: orange !important;
 }
