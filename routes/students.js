@@ -19,6 +19,7 @@ router.get('/:id', async (req, res) => {
   const student = await queries.getStudentById(req.params.id)
   const projects = await queries.getProjectsByStudentId(req.params.id)
   const studentWithProjects = student.map(student => ({ student, projects }))
+  console.log(studentWithProjects)
   res.render('student', { student: studentWithProjects })
 })
 

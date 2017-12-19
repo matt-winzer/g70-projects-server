@@ -1,5 +1,3 @@
-import { log } from "util";
-
 const submit = document.querySelector('#submit-project')
 const postUrl = '/projects'
 
