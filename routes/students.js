@@ -18,7 +18,14 @@ router.get('/', async (req, res) => {
 router.get('/search', async (req, res) => {
   if (req.query) {
     const students = await queries.searchStudentsByName(req.query.name)
-    res.json({ search: req.query.name, result: students})
+    const cohorts = await queries.getUniqueCohorts()
+    const data = cohorts.map(cohort => {
+      return {
+        cohort: cohort.cohort,
+        students: students.filter(student => student.cohort === cohort.cohort)
+      }
+    })
+    res.render('students', { cohorts: data })
   }
 })
 

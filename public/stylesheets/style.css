@@ -56,6 +56,10 @@ a.collection-item {
   font-size: 1.2em !important;
 }
 
+li.collection-item {
+  font-size: 1.2em !important;
+}
+
 div.student-info {
   margin: 0 .8em;
 }
