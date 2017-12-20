@@ -61,3 +61,7 @@ div.student-info {
 .dropdown-content li.optgroup > span {
   color: orange !important;
 }
+
+p.student-email {
+  margin-bottom: 1em !important;
+}
