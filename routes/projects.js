@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-  queries.deleteProject(req.params.id).then(project => res.json({ deleted: project[0] }))
+  queries.deleteProject(req.params.id).then(project => res.redirect(`/students/${req.query.student}`))
 })
 
 router.put('/:id/edit', (req, res) => {
