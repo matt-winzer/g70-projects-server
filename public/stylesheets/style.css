@@ -39,7 +39,7 @@ a.student-links {
 div.student-links  {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 li.collection-header {
