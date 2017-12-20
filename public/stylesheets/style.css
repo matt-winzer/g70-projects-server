@@ -32,14 +32,16 @@ p.project-description {
   margin-left: 1em;
 }
 
-a.student-links {
-  margin-left: .5em !important;
-}
-
 div.student-links  {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+div.project-links  {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 li.collection-header {
