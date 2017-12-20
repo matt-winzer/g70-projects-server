@@ -15,14 +15,10 @@ router.get('/', async (req, res) => {
   res.render('students', { cohorts: data })
 })
 
-router.get('/search', (req, res) => {
+router.get('/search', async (req, res) => {
   if (req.query) {
-    console.log(req.query)
-    queries.searchStudentsByName(req.query.name)
-      .then(students => {
-        console.log(students)
-        res.json({ search: req.query.name, result: students})
-      })
+    const students = await queries.searchStudentsByName(req.query.name)
+    res.json({ search: req.query.name, result: students})
   }
 })
 
