@@ -21,9 +21,7 @@ function getProjectsByStudentId(id) {
 }
 
 function searchStudentsByName(name) {
-  return knex('student')
-    // .where('fullname', 'like', `%${name}%`)
-    .whereRaw("LOWER(fullname) LIKE '%' || LOWER(?) || '%'", name.toLowerCase()) 
+
 }
 
 module.exports = {
