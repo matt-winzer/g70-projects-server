@@ -20,10 +20,17 @@ function getProjectsByStudentId(id) {
   return knex('project').where('studentId', id)
 }
 
+function searchStudentsByName(name) {
+  return knex('student')
+    // .where('fullname', 'like', `%${name}%`)
+    .whereRaw("LOWER(fullname) LIKE '%' || LOWER(?) || '%'", name.toLowerCase()) 
+}
+
 module.exports = {
   getAllStudents,
   getUniqueCohorts,
   getStudentsByCohort,
   getStudentById,
-  getProjectsByStudentId
+  getProjectsByStudentId,
+  searchStudentsByName
 }

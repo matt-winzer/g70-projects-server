@@ -15,6 +15,17 @@ router.get('/', async (req, res) => {
   res.render('students', { cohorts: data })
 })
 
+router.get('/search', (req, res) => {
+  if (req.query) {
+    console.log(req.query)
+    queries.searchStudentsByName(req.query.name)
+      .then(students => {
+        console.log(students)
+        res.json({ search: req.query.name, result: students})
+      })
+  }
+})
+
 router.get('/:id', async (req, res) => {
   const student = await queries.getStudentById(req.params.id)
   const projects = await queries.getProjectsByStudentId(req.params.id)

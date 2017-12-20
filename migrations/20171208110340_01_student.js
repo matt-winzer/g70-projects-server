@@ -1,7 +1,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('student', (table) =>{
     table.increments()
-    table.text('fullName')
+    table.text('fullname')
     table.text('firstName')
     table.text('lastName')
     table.text('email').notNullable().unique()
