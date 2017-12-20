@@ -44,14 +44,13 @@
                 <div id="modal1" class="modal">
                   <div class="modal-content">
                     <h4>Delete - {{name}}?</h4>
-                    <h5>Are you sure?</h5>
+                    <p>Are you sure?</p>
                   </div>
                   <div class="modal-footer">
-                    <form class="delete-button" action="/authors/{{this.author_id}}?_method=delete" method="post">
-                      <button id="delete-button" class="waves-effect waves-light btn orange darken-2" type="submit" name="delete-button">Delete</button>
-                    <a href="#!" class="modal-action modal-close waves-effect waves-light btn grey darken-2">Cancel</a>
+                    <form class="delete-button" action="/projects/{{id}}?student={{studentId}}&_method=delete" method="post">
+                      <button id="delete-button" class="waves-effect waves-light btn red lighten-1" type="submit" name="delete-button">Delete</button>
+                      <a href="#!" class="modal-action modal-close waves-effect waves-light btn grey darken-2">Cancel</a>
                     </form>
-                      <button id="delete-cancel" class="waves-effect waves-light btn orange darken-2 .modal-close">Cancel</button>
                   </div>
                 </div>
                 {{/each}}

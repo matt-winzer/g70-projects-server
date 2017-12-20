@@ -32,14 +32,6 @@ p.project-description {
   margin-left: 1em;
 }
 
-a.student-links {
-  margin-left: .5em !important;
-}
-
-a.project-links {
-  margin-left: .5em !important;
-}
-
 div.student-links  {
   display: flex;
   flex-direction: row;
