@@ -44,6 +44,10 @@ div.project-links  {
   justify-content: flex-end;
 }
 
+a.project-links {
+  margin-left: .25em !important;
+}
+
 li.collection-header {
   background-color: #ff9800 !important;
 }
