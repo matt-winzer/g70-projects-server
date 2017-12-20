@@ -39,7 +39,7 @@ a.student-links {
 div.student-links  {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 li.collection-header {
@@ -60,4 +60,8 @@ div.student-info {
 
 .dropdown-content li.optgroup > span {
   color: orange !important;
+}
+
+p.student-email {
+  margin-bottom: 1em !important;
 }

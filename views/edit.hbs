@@ -1,0 +1,41 @@
+<div class="row">
+  <h1>Edit a Project</h1>
+  <form class="col s12" action="/projects/{{project.id}}/edit?student={{#student}}{{id}}{{/student}}&_method=put" method="post">
+    <div class="row">
+      <div class="input-field col s12 black-text">
+        <input id="studentId" name="studentId" type="text" class="validate" data-id="{{#student}}{{id}}" value="{{fullName}}{{/student}}" disabled>
+        <label for="studentId">Student Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 black-text">
+        <input id="name" name="name" type="text" class="validate" value="{{project.name}}">
+        <label for="name">Project Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="description" name="description" class="materialize-textarea">{{project.description}}</textarea>
+        <label for="description">Project Description</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12 m6">
+        <input id="deployedUrl" name="deployedUrl" type="url" class="validate" value="{{project.deployedUrl}}">
+        <label for="deployedUrl">Deployed URL</label>
+      </div>
+      <div class="input-field col s12 m6">
+        <input id="gitUrl" name="gitUrl" type="url" class="validate" value="{{project.gitUrl}}">
+        <label for="gitUrl">Github URL</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6">
+        <button id="submit-project" class="btn waves-effect waves-light orange darken-2" type="submit">Submit Edits
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

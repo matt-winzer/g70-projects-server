@@ -20,6 +20,12 @@ router.get('/:id', (req, res) => {
   queries.getOneProject(req.params.id).then(project => res.json(project))
 })
 
+router.get('/:id/edit', async (req, res) => {
+  const project = await queries.getOneProject(req.params.id)
+  const student = await studentQueries.getStudentById(project.studentId)
+  res.render('edit', { project, student })
+})
+
 router.post('/', (req, res) => {
   queries.postProject(req.body).then(project => res.redirect('/projects/'))
 })
@@ -28,8 +34,11 @@ router.delete('/:id', (req, res) => {
   queries.deleteProject(req.params.id).then(project => res.json({ deleted: project[0] }))
 })
 
-router.put('/:id', (req, res) => {
-  queries.editProject(req.params.id, req.body).then(project => res.json({ edited: project[0] }))
+router.put('/:id/edit', (req, res) => {
+  queries.editProject(req.params.id, req.body).then(project => res.redirect(`/students/${req.query.student}`))
 })
 
 module.exports = router
+
+
+  
