@@ -1,12 +1,26 @@
 <h1>All Students</h1>
 
+<form class="row" action="/students/search" method="get">
+  <div class="input-field col s12">
+    <i class="material-icons prefix">search</i>
+    <input type="text" id="fullname-search" class="autocomplete" name="name">
+    <label for="fullname-search">Search by Name</label>
+  </div>
+</form>
+
 {{#each cohorts}}
+
   <ul class="collection with-header">
     <li class="collection-header">
       <h4>{{cohort}}</h4>
     </li>
+    {{#if students}}
     {{#each students}}
-    <a href="/students/{{id}}" class="collection-item black-text">{{fullName}}</a>
+    <a href="/students/{{id}}" class="collection-item black-text">{{fullname}}</a>
     {{/each}}
+    {{else}}
+    <li class="collection-item">No students found.</li>
+    {{/if}}
   </ul>
+  
 {{/each}}

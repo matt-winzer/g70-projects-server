@@ -15,6 +15,20 @@ router.get('/', async (req, res) => {
   res.render('students', { cohorts: data })
 })
 
+router.get('/search', async (req, res) => {
+  if (req.query) {
+    const students = await queries.searchStudentsByName(req.query.name)
+    const cohorts = await queries.getUniqueCohorts()
+    const data = cohorts.map(cohort => {
+      return {
+        cohort: cohort.cohort,
+        students: students.filter(student => student.cohort === cohort.cohort)
+      }
+    })
+    res.render('students', { cohorts: data })
+  }
+})
+
 router.get('/:id', async (req, res) => {
   const student = await queries.getStudentById(req.params.id)
   const projects = await queries.getProjectsByStudentId(req.params.id)
